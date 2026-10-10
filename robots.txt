@@ -1,0 +1,38 @@
+# 这是 leaderxin.github.io 的**域名根** robots.txt，也是全站唯一会被爬虫读取的
+# 那一份 —— robots 协议规定只读 scheme://host/robots.txt，放在子路径下的
+# /quant-desktop/robots.txt 不会被任何爬虫访问。
+#
+# 这个文件管辖整个域名，包括 /quant-desktop/（QuantDesktop 官网）。整站都是
+# 公开的产品介绍，没有任何需要屏蔽的路径，所以一条 Disallow 都没有。
+#
+# AI 检索类爬虫单独列出，是 GEO（生成式引擎优化）的一部分：站点的内容要出现在
+# ChatGPT / Claude / Perplexity 这类问答的答案里，前提是它们抓得到。不写也不会
+# 被默认拦（下面的 * 已经放行），显式列出的价值在于这份文件同时是一份意图声明
+# —— 将来若要收紧，改这一处即可，不必去猜哪些该放哪些该拦。
+User-agent: *
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+# Google-Extended 管的是 Gemini / Vertex 的训练与检索，不影响 Google 搜索本身
+# （搜索由 Googlebot 负责，上面 * 已放行）。这里一并放行。
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+Sitemap: https://leaderxin.github.io/quant-desktop/sitemap.xml
